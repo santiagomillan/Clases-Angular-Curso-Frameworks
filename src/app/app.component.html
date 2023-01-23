@@ -1,0 +1,12 @@
+<div class="content" role="main">
+  <h2>{{ title }}</h2>
+
+  <form *ngFor="let movie of movies">
+    <h3>
+      {{movie.name}}
+    </h3>
+    <button type="button"  [disabled]="movie.quantity <= 0" (click)="removeMovieQuantity(movie.name)">-</button>
+    {{movie.quantity}}
+    <button type="button" [disabled]="movie.quantity >= movie.available" (click)="addMovieQuantity(movie.name)">+</button>
+  </form>
+</div>
